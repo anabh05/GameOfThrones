@@ -1,0 +1,22 @@
+.characters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-content: space-between;
+    background-color: black;
+    color:white;
+}
+
+.character {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    border: solid 1px;
+    border-radius: 5px;
+    height: 300px;
+    width: 350px;
+}
