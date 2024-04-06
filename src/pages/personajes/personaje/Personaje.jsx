@@ -1,32 +1,39 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
-
+import { housesGlobal } from "../../casas/Casas";
 
 
 export default function Personaje() {
+    const {houses} = useContext(housesGlobal)
     const [character, setCharacter] = useState()
     const { id } = useParams();
-  const getCharacter = () => {
+    const getCharacter = () => {
         axios.get('http://localhost:3000/characters/'+id)
-          .then(data => setCharacter(data.data))
-          
+          .then(data => setCharacter(data.data))   
+    }
+    const pintarCasa =(casa) => {
+        if (casa === "Lannister") {
+           return "/images/houses/03.webp"
         }
         
+    }
+        
   useEffect(() => { 
-
     getCharacter()
-
   }, [])
+    
   return (
       <>
           {character && <div>
               
             <div className='character-img'>
                 <img src={"/public" + character.image} alt={character.name} />
-            </div>
+              </div>
+              {console.log({houses})}
             <h2>{character.name}</h2>
-            <h3>House: {character.house}</h3>
+              <h3>House: {character.house}</h3>
+              <img src={pintarCasa(character.house)} alt="" />
             <h3>Alliances:</h3>
             <ul>
                 {character.alliances}
