@@ -1,19 +1,21 @@
-import { useState } from 'react'
 import './App.css'
 import Home from './pages/home/Home'
 import { Route, Routes, BrowserRouter as Router, Link } from 'react-router-dom'
 import Personajes from './pages/personajes/Personajes'
 import Casas from './pages/casas/Casas'
 import Cronologia from './pages/cronologia/Cronologia'
+import Personaje from './pages/personajes/personaje/Personaje'
+import Casa from './pages/casas/casa/Casa'
+import { housesGlobal } from './pages/casas/Casas'
 
 
-function App() {
 
+function App({houses, setHouses}) {
 
 
   return (
     <>
-        
+        <housesGlobal.Provider value={{houses: houses, setHouses: setHouses}}>
         <Router>
         <header className='header'>
 
@@ -30,13 +32,16 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/personajes" element={ <Personajes/>}/>
           <Route path="/casas" element={ <Casas/>} />
-          <Route path="/cronologia" element={<Cronologia/>} />
+          <Route path="/casas/:id" element={ <Casa/>}/>
+          <Route path="/cronologia" element={<Cronologia />} />
+          <Route path="/personajes/:id" element={<Personaje />} />
+          
 
         </Routes>
 
       </Router>
       
-      
+      </housesGlobal.Provider>
     </>
   )
 }
