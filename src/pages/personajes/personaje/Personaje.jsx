@@ -13,8 +13,36 @@ export default function Personaje() {
           .then(data => setCharacter(data.data))   
     }
     const pintarCasa =(casa) => {
-        if (casa === "Lannister") {
-           return "/images/houses/03.webp"
+        if (casa === "Stark") {
+           return "/images/houses/01.webp"
+        } else if (casa === "Lannister") {
+          return "/images/houses/02.webp"
+        } else if (casa === "Baratheon") {
+          return "/images/houses/03.webp"
+        }else if (casa === "Targaryen") {
+          return "/images/houses/04.webp"
+        }else if (casa === "Tyrell") {
+          return "/images/houses/05.webp"
+        }else if (casa === "Greyjoy") {
+          return "/images/houses/06.webp"
+        }else if (casa === "Martell") {
+          return "/images/houses/07.webp"
+        }else if (casa === "Tully") {
+          return "/images/houses/08.webp"
+        }else if (casa === "Arryn") {
+          return "/images/houses/09.webp"
+        }else if (casa === "Bolton") {
+          return "/images/houses/10.webp"
+        }else if (casa === "Frey") {
+          return "/images/houses/11.webp"
+        }else if (casa === "Mormont") {
+          return "/images/houses/12.webp"
+        }else if (casa === "Tarly") {
+          return "/images/houses/13.webp"
+        }else if (casa === "Seaworth") {
+          return "/images/houses/14.webp"
+        }else if (casa === "Tarth") {
+          return "/images/houses/15.webp"
         }
         
     }
