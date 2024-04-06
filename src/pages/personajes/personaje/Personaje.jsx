@@ -3,7 +3,6 @@ import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
 
 
-
 export default function Personaje() {
   //const { houses } = useContext(housesGlobal)
   const [character, setCharacter] = useState()
