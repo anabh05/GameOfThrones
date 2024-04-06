@@ -1,3 +1,4 @@
+import React from 'react'
 import './App.css'
 import Home from './pages/home/Home'
 import { Route, Routes, BrowserRouter as Router, Link } from 'react-router-dom'
@@ -6,42 +7,45 @@ import Casas from './pages/casas/Casas'
 import Cronologia from './pages/cronologia/Cronologia'
 import Personaje from './pages/personajes/personaje/Personaje'
 import Casa from './pages/casas/casa/Casa'
-import { housesGlobal } from './pages/casas/Casas'
+
+// export const housesGlobal = React.createContext()
 
 
 
-function App({houses, setHouses}) {
-  console.log(houses+ " APP ")
+function App({ houses }) {
+  console.log(houses + " APP ")
 
+
+  const housesGlobal = React.createContext()
 
   return (
     <>
-        <housesGlobal.Provider value={{houses: houses, setHouses: setHouses}}>
+      <housesGlobal.Provider value={{ houses }}>
         <Router>
-        <header className='header'>
+          <header className='header'>
 
             <nav className='nav'>
               <Link className='a' to="/">Home</Link>
               <Link className='a' to="/personajes">Personajes</Link>
               <Link className='a' to="/casas">Casas</Link>
-              <Link className='a'to ="/cronologia">Cronologia</Link>
+              <Link className='a' to="/cronologia">Cronologia</Link>
             </nav>
-        </header>
+          </header>
 
-        <Routes>
+          <Routes>
 
-          <Route path="/" element={<Home/>} />
-          <Route path="/personajes" element={ <Personajes/>}/>
-          <Route path="/casas" element={ <Casas/>} />
-          <Route path="/casas/:id" element={ <Casa/>}/>
-          <Route path="/cronologia" element={<Cronologia />} />
-          <Route path="/personajes/:id" element={<Personaje />} />
-          
+            <Route path="/" element={<Home />} />
+            <Route path="/personajes" element={<Personajes />} />
+            <Route path="/casas" element={<Casas />} />
+            <Route path="/casas/:id" element={<Casa />} />
+            <Route path="/cronologia" element={<Cronologia />} />
+            <Route path="/personajes/:id" element={<Personaje />} />
 
-        </Routes>
 
-      </Router>
-      
+          </Routes>
+
+        </Router>
+
       </housesGlobal.Provider>
     </>
   )

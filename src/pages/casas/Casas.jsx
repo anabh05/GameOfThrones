@@ -1,24 +1,25 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-export const housesGlobal = React.createContext()
 
 
 export default function Casas() {
   const [houses, setHouses] = useState()
   const getHouses = () => {
-        axios.get('http://localhost:3000/houses')
-          .then(data => setHouses(data.data))
+    axios.get('http://localhost:3000/houses')
+      .then(data => setHouses(data.data))
   }
-  
-  useEffect(() => { 
+
+  console.log("casas", houses);
+
+  useEffect(() => {
 
     getHouses()
 
   }, [])
-  
+
   return (
-    
+
     <div>{houses &&
       <div>
         {houses.map((house, index) => <Link key={index} to={house.id}>
@@ -31,7 +32,7 @@ export default function Casas() {
 
           </div></Link>
         )}
-      </div> }
+      </div>}
     </div>
-      )
+  )
 }
