@@ -5,7 +5,7 @@
     align-content: center;
     align-content: space-between;
     background-color: black;
-    color:white;
+    color: white;
 }
 
 .character {
@@ -29,9 +29,11 @@
     justify-content: center;
 }
 
-.character-img img{
+
+.character-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position:absolute;
+    position: absolute;
+
 }
