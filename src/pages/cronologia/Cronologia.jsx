@@ -19,12 +19,17 @@ export default function Cronologia() {
     getCharacters()
   }, [])
 
+    const [edad,setEdad] = useState(0)
+
 
   function ordenarItems(items, ascendente) {
     characters.sort(function (a, b) {
       if (ascendente) {
+        setEdad(parseInt(b.age))
         return a.age - b.age;
       } else {
+        setEdad(parseInt(a.age))
+        
         return b.age - a.age;
       }
     });
@@ -46,16 +51,15 @@ const [ascendente, setAscendente] = useState(true);
   setCharacters(nuevosItems);
 };
 
-  
 
 
   return (
   <>
 
-  <button type='text' onClick={handleClick}>Edad</button>
+      <button type='text' onClick={handleClick}>{edad ? edad : 0}</button>
       
   <div className='characters-age'>
-  {characters.map((character, index) => 
+      {characters.map((character, index) => character.age &&
       <div className='character-age' key={index}>
       <h3>{character.age}</h3>
       <h3>{character.name}</h3>
