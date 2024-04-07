@@ -1,0 +1,27 @@
+.characters-age{
+    display: flex;
+    flex-direction: column;
+}
+
+.character-age {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.character-age_img {
+    border-radius:  999px;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.character-age_img img {
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+
+}

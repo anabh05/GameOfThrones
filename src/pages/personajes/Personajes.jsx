@@ -10,8 +10,6 @@ export default function Personajes() {
   const getCharacters = () => {
 
         axios.get('http://localhost:3000/characters/')
-
-        // .then(res => res.json())
             .then(data => setCharacters(data.data))
 
   }
@@ -25,8 +23,6 @@ export default function Personajes() {
 return (
   <>
 
-    
-      
 
   <div className='characters'>
         {characters.map((character, index) =><Link to={character.id} key={index}> 
@@ -39,7 +35,6 @@ return (
       <p>Siblings:{character.siblings}</p>
     </div></Link>
     )}
-
   </div>
   </>
 

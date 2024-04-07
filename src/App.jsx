@@ -11,7 +11,6 @@ import { housesGlobal } from './pages/casas/Casas'
 
 
 function App({houses, setHouses}) {
-  console.log(houses+ " APP ")
 
 
   return (

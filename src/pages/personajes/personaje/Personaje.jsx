@@ -11,8 +11,11 @@ export default function Personaje() {
     const getCharacter = () => {
         axios.get('http://localhost:3000/characters/'+id)
           .then(data => setCharacter(data.data))   
-    }
-    const pintarCasa =(casa) => {
+  }
+  
+  
+  const pintarCasa =(casa) => {
+
         if (casa === "Stark") {
            return "/images/houses/01.webp"
         } else if (casa === "Lannister") {
@@ -44,7 +47,7 @@ export default function Personaje() {
         }else if (casa === "Tarth") {
           return "/images/houses/15.webp"
         }
-        
+
     }
         
   useEffect(() => { 
