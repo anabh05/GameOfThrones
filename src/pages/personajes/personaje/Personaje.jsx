@@ -56,12 +56,14 @@ export default function Personaje() {
 
   return (
     <>
+
+
       {character && <div>
 
         <div className='character-img'>
           <img src={"/public" + character.image} alt={character.name} />
         </div>
-        {/* {console.log({ houses })} */}
+        {console.log({ houses })}
         <h2>{character.name}</h2>
         <h3>House: {character.house}</h3>
         <img src={pintarCasa(character.house)} alt="" />
@@ -75,7 +77,7 @@ export default function Personaje() {
             <li key={episodeIndex}>{episode}</li>
           ))}
         </ul>
-        {/* {console.log(character.episodes)} */}
+        {console.log(character.episodes)}
         <h3>Parents:</h3>
         <ul>
           {character.parents.map((parent, parentIndex) => (
@@ -95,6 +97,7 @@ export default function Personaje() {
           ))}
         </ul>
       </div>}
+
     </>
   );
 }
