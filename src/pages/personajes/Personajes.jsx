@@ -3,41 +3,86 @@ import axios from 'axios'
 import './personajes.css'
 import { Link } from 'react-router-dom'
 
+
 export default function Personajes() {
  
-  const [characters, setCharacters] = useState([])
+  const [characters, setCharacters] = useState([]);
+  const [newCharacters, setNewCharacters] = useState([]);
+
+  useEffect(() => {
+    getCharacters();
+  }, []);
 
   const getCharacters = () => {
-
-        axios.get('http://localhost:3000/characters/')
-            .then(data => setCharacters(data.data))
-
+    axios.get('http://localhost:3000/characters/')
+      .then(data => setCharacters(data.data));
   }
 
-  useEffect(() => { 
+  const filtrado = (evento) => {
+    const valorInput = evento.target.value.toLowerCase();
+    filtradoPersonajes(valorInput);
+  }
 
-    getCharacters()
+  const filtradoPersonajes = (valor) => {
+    const filteredCharacters = characters.filter(character => 
+      character.name.toLowerCase().includes(valor)
+    );
+    setNewCharacters(filteredCharacters);
+  }
+  //
+  //  const filtradoPersonajes = (valor) => {
+  //   // const data2 = characters.filter(characters => characters.name.toLowerCase() == valor.toLowerCase())
+  //      characters.name.toLowerCase().includes(valor).toLowerCase()
 
-  }, [])
-  console.log(characters)
-return (
-  <>
+  //   setNewCharacters(data)
 
 
-  <div className='characters'>
-        {characters.map((character, index) =><Link to={character.id} key={index}> 
-      <div className='character' >
-        <div className='character-img'>
-          <img src={character.image}></img></div>
-      <h3>{character.name}</h3>
-      <p>House:{character.house}</p>
-      <p>Parents:{character.parents}</p> 
-      <p>Siblings:{character.siblings}</p>
-    </div></Link>
-    )}
-  </div>
-  </>
-
-  )
-
+    
+  // }
+    // if (valor === undefined) {
+    // // console.log(valor)
+    // // const data2 = characters.filter(characters => characters.name == valor)
+    //   // setNewCharacters(data2)
+    //   setNewCharacters([...characters])
+    
+    // // console.log(data2)
+    //   console.log(newCharacters)
+    // } else {
+    //   const data2 = characters.filter(characters => characters.name == valor)
+    //   setNewCharacters(data2)
+  return (
+    <>
+      <input type='text' onChange={(e) => filtrado(e)} className='form-data' />
+      <div className='characters'>
+        {newCharacters.length === 0 ? 
+          characters.map((character, index) => (
+            <Link to={character.id} key={index}>
+              <div className='character'>
+                <div className='character-img'>
+                  <img src={character.image} alt={character.name} />
+                </div>
+                <h3>{character.name}</h3>
+                <p>House: {character.house}</p>
+                <p>Parents: {character.parents}</p>
+                <p>Siblings: {character.siblings}</p>
+              </div>
+            </Link>
+          )) : 
+          newCharacters.map((character, index) => (
+            <Link to={character.id} key={index}>
+              <div className='character'>
+                <div className='character-img'>
+                  <img src={character.image} alt={character.name} />
+                </div>
+                <h3>{character.name}</h3>
+                <p>House: {character.house}</p>
+                <p>Parents: {character.parents}</p>
+                <p>Siblings: {character.siblings}</p>
+              </div>
+            </Link>
+          ))
+        }
+      </div>
+    </>
+  );
 }

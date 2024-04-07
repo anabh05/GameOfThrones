@@ -6,18 +6,26 @@ export const housesGlobal = React.createContext()
 
 export default function Casas() {
   const [houses, setHouses] = useState()
-  const getHouses = () => {
-        axios.get('http://localhost:3000/houses')
+  const getHouses = (nombre) => {
+        axios.get('http://localhost:3000/houses?name='+ nombre)
           .then(data => setHouses(data.data))
   }
   
   useEffect(() => { 
 
-    getHouses()
+    getHouses("")
 
   }, [])
+
+  const filtrado = (evento) => {
+      const nombre = evento.target.value
+      getHouses(nombre)
+    }
   
   return (
+  
+    <>
+    <input type='text' onChange={(e) => filtrado(e)} className='form-data'></input>
     
     <div>{houses &&
       <div>
@@ -32,6 +40,6 @@ export default function Casas() {
           </div></Link>
         )}
       </div> }
-    </div>
+    </div></>
       )
 }
