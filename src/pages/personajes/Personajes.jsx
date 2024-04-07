@@ -5,8 +5,10 @@ import { Link } from 'react-router-dom'
 
 
 
+
 export default function Personajes({ t }) {
-  
+
+  origin / desarollo - mario
   const [characters, setCharacters] = useState([]);
   const [newCharacters, setNewCharacters] = useState([]);
 
@@ -25,7 +27,7 @@ export default function Personajes({ t }) {
   }
 
   const filtradoPersonajes = (valor) => {
-    const filteredCharacters = characters.filter(character => 
+    const filteredCharacters = characters.filter(character =>
       character.name.toLowerCase().includes(valor)
     );
     setNewCharacters(filteredCharacters);
@@ -35,27 +37,29 @@ export default function Personajes({ t }) {
   //   // const data2 = characters.filter(characters => characters.name.toLowerCase() == valor.toLowerCase())
   //      characters.name.toLowerCase().includes(valor).toLowerCase()
 
+
   //   setNewCharacters(data)
 
 
-    
+
+
   // }
-    // if (valor === undefined) {
-    // // console.log(valor)
-    // // const data2 = characters.filter(characters => characters.name == valor)
-    //   // setNewCharacters(data2)
-    //   setNewCharacters([...characters])
-    
-    // // console.log(data2)
-    //   console.log(newCharacters)
-    // } else {
-    //   const data2 = characters.filter(characters => characters.name == valor)
-    //   setNewCharacters(data2)
+  // if (valor === undefined) {
+  // // console.log(valor)
+  // // const data2 = characters.filter(characters => characters.name == valor)
+  //   // setNewCharacters(data2)
+  //   setNewCharacters([...characters])
+
+  // // console.log(data2)
+  //   console.log(newCharacters)
+  // } else {
+  //   const data2 = characters.filter(characters => characters.name == valor)
+  //   setNewCharacters(data2)
   return (
     <>
       <input type='text' onChange={(e) => filtrado(e)} className='form-data' />
       <div className='characters'>
-        {newCharacters.length === 0 ? 
+        {newCharacters.length === 0 ?
           characters.map((character, index) => (
             <Link to={character.id} key={index}>
               <div className='character'>
@@ -68,7 +72,7 @@ export default function Personajes({ t }) {
                 <p>{t('Siblings')}: {character.siblings}</p>
               </div>
             </Link>
-          )) : 
+          )) :
           newCharacters.map((character, index) => (
             <Link to={character.id} key={index}>
               <div className='character'>
@@ -86,4 +90,5 @@ export default function Personajes({ t }) {
       </div>
     </>
   );
+
 }

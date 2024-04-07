@@ -8,11 +8,11 @@ export default function Casas() {
   const [houses, setHouses] = useState()
   const [newHouses, setNewHouses] = useState([]);
   const getHouses = () => {
-        axios.get('http://localhost:3000/houses')
-          .then(data => setHouses(data.data))
+    axios.get('http://localhost:3000/houses')
+      .then(data => setHouses(data.data))
   }
-  
-  useEffect(() => { 
+
+  useEffect(() => {
 
     getHouses("")
 
@@ -28,41 +28,41 @@ export default function Casas() {
   }
 
   const filtradoCasas = (valor) => {
-    const filteredHouses = houses.filter(character => 
+    const filteredHouses = houses.filter(character =>
       character.name.toLowerCase().includes(valor)
     );
     setNewHouses(filteredHouses);
   }
-  
+
   return (
-  
+
     <>
-    <input type='text' onChange={(e) => filtrado(e)} className='form-data' />
-    
-    <div>{houses &&
-      <div>
+      <input type='text' onChange={(e) => filtrado(e)} className='form-data' />
+
+      <div>{houses &&
+        <div>
           {newHouses.length === 0 ?
             houses.map((house, index) => <Link key={index} to={house.id}>
-          <div>
-            <div>
-              <img src={house.image} alt={house.name} />
-            </div>
-            <h2>{house.name}</h2>
-            <p></p>
+              <div>
+                <div>
+                  <img src={house.image} alt={house.name} />
+                </div>
+                <h2>{house.name}</h2>
+                <p></p>
 
-          </div></Link>
-            ):
-          newHouses.map((house, index) => <Link key={index} to={house.id}>
-          <div>
-            <div>
-              <img src={house.image} alt={house.name} />
-            </div>
-            <h2>{house.name}</h2>
-            <p></p>
+              </div></Link>
+            ) :
+            newHouses.map((house, index) => <Link key={index} to={house.id}>
+              <div>
+                <div>
+                  <img src={house.image} alt={house.name} />
+                </div>
+                <h2>{house.name}</h2>
+                <p></p>
 
-          </div></Link>
-        )}
-      </div> }
-    </div></>
-      )
+              </div></Link>
+            )}
+        </div>}
+      </div></>
+  )
 }
