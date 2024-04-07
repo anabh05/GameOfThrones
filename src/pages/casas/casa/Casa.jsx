@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 
 
-export default function Casa() {
+export default function Casa({t}) {
     const [house, setHouse] = useState()
     const { id } = useParams();
     const getHouse = () => {
@@ -20,9 +20,6 @@ export default function Casa() {
   return (
     
     <>
-      
-    <input type='text' onChange={(e) => filtrado(e)} className='form-data'></input>
-
           {house && <div>
               {console.log(house)}
               <div>
@@ -33,27 +30,27 @@ export default function Casa() {
               </div>
               <div>
                   <div>
-                      <h3>SEDE</h3>
+                      <h3>{t('SEDE')}</h3>
                       <p>{house.settlement}</p>
                   </div>
                   <div>
-                    <h3>REGION</h3>
+                    <h3>{t('REGION')}</h3>
                     <p>{house.region}</p>
                   </div>
                   <div>
-                    <h3>ALIANZAS</h3>
+                    <h3>{t('ALIANZAS')}</h3>
                       {house.alliances.map((alliance, i) =>
                           <p key={i}>{alliance} </p>
                       )}
                   </div>
                   <div>
-                    <h3>RELIGION</h3>
+                    <h3>{t('RELIGION')}</h3>
                     {house.religions.map((religion, i) =>
                           <p key={i}>{religion} </p>
                       )}
                   </div>
                   <div>
-                      <h3>FUNDACION</h3>
+                      <h3>{t('FUNDACION')}</h3>
                     <p>{house.foundation}</p>
                   </div>
                   <div>

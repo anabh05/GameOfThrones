@@ -4,8 +4,9 @@ import './personajes.css'
 import { Link } from 'react-router-dom'
 
 
-export default function Personajes() {
- 
+
+export default function Personajes({ t }) {
+  
   const [characters, setCharacters] = useState([]);
   const [newCharacters, setNewCharacters] = useState([]);
 
@@ -62,9 +63,9 @@ export default function Personajes() {
                   <img src={character.image} alt={character.name} />
                 </div>
                 <h3>{character.name}</h3>
-                <p>House: {character.house}</p>
-                <p>Parents: {character.parents}</p>
-                <p>Siblings: {character.siblings}</p>
+                <p>{t('House')}: {character.house}</p>
+                <p>{t('Parents')}: {character.parents}</p>
+                <p>{t('Siblings')}: {character.siblings}</p>
               </div>
             </Link>
           )) : 
@@ -75,9 +76,9 @@ export default function Personajes() {
                   <img src={character.image} alt={character.name} />
                 </div>
                 <h3>{character.name}</h3>
-                <p>House: {character.house}</p>
-                <p>Parents: {character.parents}</p>
-                <p>Siblings: {character.siblings}</p>
+                <p>{t('House')}: {character.house}</p>
+                <p>{t('Parents')}: {character.parents}</p>
+                <p>{t('Siblings')}: {character.siblings}</p>
               </div>
             </Link>
           ))

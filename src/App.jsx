@@ -6,42 +6,38 @@ import Casas from './pages/casas/Casas'
 import Cronologia from './pages/cronologia/Cronologia'
 import Personaje from './pages/personajes/personaje/Personaje'
 import Casa from './pages/casas/casa/Casa'
-import { housesGlobal } from './pages/casas/Casas'
+import { useTranslation } from 'react-i18next';
 
 
-
-function App({houses, setHouses}) {
-
-
+function App() {
+  
+  const { t } = useTranslation();
   return (
     <>
-        <housesGlobal.Provider value={{houses: houses, setHouses: setHouses}}>
         <Router>
         <header className='header'>
 
             <nav className='nav'>
-              <Link className='a' to="/">Home</Link>
-              <Link className='a' to="/personajes">Personajes</Link>
-              <Link className='a' to="/casas">Casas</Link>
-              <Link className='a'to ="/cronologia">Cronologia</Link>
+              <Link className='a' to="/">{t('Home')}</Link>
+              <Link className='a' to="/personajes">{t('Personajes')}</Link>
+              <Link className='a' to="/casas">{t('Casas')}</Link>
+              <Link className='a'to ="/cronologia">{t('Cronologia')}</Link>
             </nav>
         </header>
 
         <Routes>
 
-          <Route path="/" element={<Home/>} />
-          <Route path="/personajes" element={ <Personajes/>}/>
-          <Route path="/casas" element={ <Casas/>} />
-          <Route path="/casas/:id" element={ <Casa/>}/>
-          <Route path="/cronologia" element={<Cronologia />} />
-          <Route path="/personajes/:id" element={<Personaje />} />
+          <Route path="/" element={<Home t={t} />} />
+          <Route path="/personajes" element={ <Personajes t={t}/>}/>
+          <Route path="/casas" element={ <Casas t={t}/>} />
+          <Route path="/casas/:id" element={ <Casa t={t}/>}/>
+          <Route path="/cronologia" element={<Cronologia t={t} />} />
+          <Route path="/personajes/:id" element={<Personaje t={t}/>} />
           
 
         </Routes>
 
       </Router>
-      
-      </housesGlobal.Provider>
     </>
   )
 }

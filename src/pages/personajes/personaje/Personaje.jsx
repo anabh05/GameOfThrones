@@ -1,15 +1,14 @@
 import axios from "axios"
-import { useContext, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
-import { housesGlobal } from "../../casas/Casas";
 
 
-export default function Personaje() {
-    const {houses} = useContext(housesGlobal)
+export default function Personaje({t}) {
+    
     const [character, setCharacter] = useState()
     const { id } = useParams();
     const getCharacter = () => {
-        axios.get('http://localhost:3000/characters/'+id)
+        axios.get('http://localhost:3000/characters/'+ id)
           .then(data => setCharacter(data.data))   
   }
   
@@ -62,34 +61,33 @@ export default function Personaje() {
             <div className='character-img'>
                 <img src={"/public" + character.image} alt={character.name} />
               </div>
-              {console.log({houses})}
             <h2>{character.name}</h2>
-              <h3>House: {character.house}</h3>
+              <h3>{t('House')}: {character.house}</h3>
               <img src={pintarCasa(character.house)} alt="" />
-            <h3>Alliances:</h3>
+            <h3>{t('Alliances')}:</h3>
             <ul>
                 {character.alliances}
             </ul>
-            <h3>Episodes:</h3>
+            <h3>{t('Episodes')}:</h3>
             <ul>
                 {character.episodes.map((episode, episodeIndex) => (
                 <li key={episodeIndex}>{episode}</li>
                 ))}
             </ul>
             {console.log(character.episodes)}
-            <h3>Parents:</h3>
+            <h3>{t('Parents')}:</h3>
             <ul>
                 {character.parents.map((parent, parentIndex) => (
                 <li key={parentIndex}>{parent}</li>
                 ))}
             </ul>
-            <h3>Siblings:</h3>
+            <h3>{t('Siblings')}:</h3>
             <ul>
                 {character.siblings.map((sibling, siblingIndex) => (
                 <li key={siblingIndex}>{sibling}</li>
                 ))}
             </ul>
-            <h3>Titles:</h3>
+            <h3>{t('Titles')}:</h3>
             <ul>
                 {character.titles.map((title, titleIndex) => (
                 <li key={titleIndex}>{title}</li>
