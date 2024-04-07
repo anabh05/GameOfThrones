@@ -18,7 +18,11 @@ export default function Casa() {
   }, [])
     
   return (
-      <>
+    
+    <>
+      
+    <input type='text' onChange={(e) => filtrado(e)} className='form-data'></input>
+
           {house && <div>
               {console.log(house)}
               <div>

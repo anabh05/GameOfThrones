@@ -54,7 +54,8 @@ export default function Personaje() {
   }, [])
     
   return (
-      <>
+    <>
+
           {character && <div>
               
             <div className='character-img'>
