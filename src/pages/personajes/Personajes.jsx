@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 export default function Personajes({ t }) {
 
-  origin / desarollo - mario
+  
   const [characters, setCharacters] = useState([]);
   const [newCharacters, setNewCharacters] = useState([]);
 
