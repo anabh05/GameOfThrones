@@ -9,9 +9,11 @@ export default function Personajes() {
   const [characters, setCharacters] = useState([])
 
   const getCharacters = () => {
+
     axios.get('http://localhost:3000/characters/')
       // .then(res => res.json())
       .then(data => setCharacters(data.data))
+
 
   }
 
@@ -21,6 +23,7 @@ export default function Personajes() {
 
   }, [])
 
+  console.log(characters)
   return (
     <>
 
@@ -38,12 +41,8 @@ export default function Personajes() {
           </div></Link>
         )}
       </div>
-
-
-
-
-
-
     </>
+
+
   )
 }

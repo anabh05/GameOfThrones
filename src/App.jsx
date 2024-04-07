@@ -11,10 +11,7 @@ import Casa from './pages/casas/casa/Casa'
 // export const housesGlobal = React.createContext()
 
 
-
-function App({ houses }) {
-  console.log(houses + " APP ")
-
+function App({ houses, setHouses }) {
 
   const housesGlobal = React.createContext()
 
@@ -40,7 +37,6 @@ function App({ houses }) {
             <Route path="/casas/:id" element={<Casa />} />
             <Route path="/cronologia" element={<Cronologia />} />
             <Route path="/personajes/:id" element={<Personaje />} />
-
 
           </Routes>
 
