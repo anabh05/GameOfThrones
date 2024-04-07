@@ -8,6 +8,10 @@ import { Link } from 'react-router-dom'
 
 export default function Personajes({ t }) {
 
+<<<<<<< HEAD
+=======
+  
+>>>>>>> origin/desarrollo-ana
   const [characters, setCharacters] = useState([]);
   const [newCharacters, setNewCharacters] = useState([]);
 

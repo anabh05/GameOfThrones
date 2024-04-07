@@ -2,6 +2,7 @@ import axios from "axios"
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 export const housesGlobal = React.createContext()
+import './casas.css'
 
 
 export default function Casas() {
@@ -40,15 +41,15 @@ export default function Casas() {
       <input type='text' onChange={(e) => filtrado(e)} className='form-data' />
 
       <div>{houses &&
-        <div>
+        <div className="casas">
           {newHouses.length === 0 ?
             houses.map((house, index) => <Link key={index} to={house.id}>
-              <div>
-                <div>
+              <div className="casa">
+                <div className="casa-img">
                   <img src={house.image} alt={house.name} />
                 </div>
-                <h2>{house.name}</h2>
-                <p></p>
+                <h3>{house.name}</h3>
+               
 
               </div></Link>
             ) :
