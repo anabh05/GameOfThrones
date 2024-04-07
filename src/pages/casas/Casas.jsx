@@ -8,7 +8,7 @@ export default function Casas() {
   const [houses, setHouses] = useState()
   const [newHouses, setNewHouses] = useState([]);
   const getHouses = () => {
-        axios.get('http://localhost:3000/houses?name=')
+        axios.get('http://localhost:3000/houses')
           .then(data => setHouses(data.data))
   }
   
