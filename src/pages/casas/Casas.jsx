@@ -2,12 +2,13 @@ import axios from "axios"
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
-let nombre = ""
+
 export default function Casas() {
   const [houses, setHouses] = useState()
 
-  const getHouses = (nombre) => {
-    axios.get('http://localhost:3000/houses?name=' + nombre)
+  const [newHouses, setNewHouses] = useState([]);
+  const getHouses = () => {
+    axios.get('http://localhost:3000/houses')
       .then(data => setHouses(data.data))
 
   }
@@ -20,7 +21,6 @@ export default function Casas() {
 
   }, [])
 
-
   const filtrado = (evento) => {
     // nombre = `${evento.target.value}`
     getHouses(evento.target.value)
@@ -30,7 +30,6 @@ export default function Casas() {
 
     <>
       <input type='text' onChange={(e) => filtrado(e)} className='form-data'></input>
-
 
       <div>{houses &&
         <div>
@@ -46,7 +45,8 @@ export default function Casas() {
           )}
 
         </div>}
-      </div></>
+      </div>
+    </>
   )
 
 }

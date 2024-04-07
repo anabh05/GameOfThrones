@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 export default function Personaje() {
 
 
+
   const [character, setCharacter] = useState()
   const { id } = useParams();
   const getCharacter = () => {
