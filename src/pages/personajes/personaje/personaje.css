@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+        display: flex;
+        place-items: center;
+        min-width: 320px;
+        min-height: 100vh;
+        justify-content: center;
+        background-color: black;
+}
+.character-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+.character-main h2 {
+    font-family: Game Of Thrones;
+     
+}
+
+.character-info {
+    display: flex;
+}
+
+.info-texto {
+ text-align: center;
+}
+
+.info-texto h3 {
+  font-family: Game Of Thrones;
+  text-align: center;
+}
+ul {
+    list-style: none;
+}
+
+li {
+list-style: none;
+
+}
+
+.info-img {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.info-img img {
+    width: 100%;
+}
+
+.info-img h3 {
+    font-family: Game Of Thrones;
+}

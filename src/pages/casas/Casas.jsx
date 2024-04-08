@@ -38,7 +38,8 @@ export default function Casas() {
   return (
 
     <>
-      <input type='text' onChange={(e) => filtrado(e)} className='form-data' />
+      <div className="filtro">
+      <input type='text' onChange={(e) => filtrado(e)} /></div>
 
       <div>{houses &&
         <div className="casas">

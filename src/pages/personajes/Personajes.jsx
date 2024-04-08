@@ -2,16 +2,15 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import './personajes.css'
 import { Link } from 'react-router-dom'
+import Languages from '../../components/Languages';
+import Filtro from '../../components/Filtro';
 
 
 
 
 export default function Personajes({ t }) {
 
-<<<<<<< HEAD
-=======
-  
->>>>>>> origin/desarrollo-ana
+
   const [characters, setCharacters] = useState([]);
   const [newCharacters, setNewCharacters] = useState([]);
 
@@ -60,7 +59,10 @@ export default function Personajes({ t }) {
   //   setNewCharacters(data2)
   return (
     <>
-      <input type='text' onChange={(e) => filtrado(e)} className='form-data' />
+      <Languages></Languages>
+      <div className='filtro'>
+      <img className='search' src= "public\search_FILL0_wght400_GRAD0_opsz24.svg"></img>
+      <input type='text' onChange={(e) => filtrado(e)} className='form-data' /></div>
       <div className='characters'>
         {newCharacters.length === 0 ?
           characters.map((character, index) => (
@@ -70,9 +72,9 @@ export default function Personajes({ t }) {
                   <img src={character.image} alt={character.name} />
                 </div>
                 <h3>{character.name}</h3>
-                <p>{t('House')}: {character.house}</p>
+                {/* <p>{t('House')}: {character.house}</p>
                 <p>{t('Parents')}: {character.parents}</p>
-                <p>{t('Siblings')}: {character.siblings}</p>
+                <p>{t('Siblings')}: {character.siblings}</p> */}
               </div>
             </Link>
           )) :
@@ -83,9 +85,9 @@ export default function Personajes({ t }) {
                   <img src={character.image} alt={character.name} />
                 </div>
                 <h3>{character.name}</h3>
-                <p>{t('House')}: {character.house}</p>
+                {/* <p>{t('House')}: {character.house}</p>
                 <p>{t('Parents')}: {character.parents}</p>
-                <p>{t('Siblings')}: {character.siblings}</p>
+                <p>{t('Siblings')}: {character.siblings}</p> */}
               </div>
             </Link>
           ))

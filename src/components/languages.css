@@ -1,0 +1,21 @@
+.idioma-es {
+    margin: 10px;
+    font-family: Game Of Thrones;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    border: none;
+    width: 66px;
+}
+
+.idioma-en {
+    margin: 10px;
+    font-family: Game Of Thrones;
+    position: absolute;
+    top: 10px;
+    right: 100px;
+    z-index: 1;
+    border: none;
+    width: 66px;
+}

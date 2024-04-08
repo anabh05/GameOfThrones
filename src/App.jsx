@@ -7,7 +7,6 @@ import Casas from './pages/casas/Casas'
 import Cronologia from './pages/cronologia/Cronologia'
 import Personaje from './pages/personajes/personaje/Personaje'
 import Casa from './pages/casas/casa/Casa'
-
 import { useTranslation } from 'react-i18next';
 import Languages from './components/Languages'
 
@@ -20,9 +19,9 @@ function App() {
     <>
       <Router>
 
-
+    
         <header className='header'>
-          <Languages></Languages>
+          
 
           <nav className='nav'>
             <Link className='a' to="/">{t('Home')}</Link>
