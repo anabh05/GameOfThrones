@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import './cronologia.css'
+import Languages from '../../components/Languages'
 
 
 export default function Cronologia() {
@@ -9,7 +10,7 @@ export default function Cronologia() {
 
 
   const getCharacters = () => {
-    axios.get('http://localhost:3000/characters/')
+    axios.get('https://gameof-thrones-json.vercel.app/characters/')
       // .then(res => res.json())
       .then(data => setCharacters(data.data))
   }
@@ -50,6 +51,7 @@ export default function Cronologia() {
 
   return (
     <>
+      <Languages></Languages>
       <div className='b-cronologia__container'>
 
         <button className='b-btn--cronologia' type='text' onClick={handleClick}>{edad ? edad : 0}</button>

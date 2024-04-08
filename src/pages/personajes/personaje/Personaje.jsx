@@ -6,12 +6,13 @@ import Languages from "../../../components/Languages";
 
 
 
+
 export default function Personaje({ t }) {
 
   const [character, setCharacter] = useState()
   const { id } = useParams();
   const getCharacter = () => {
-    axios.get('http://localhost:3000/characters/' + id)
+    axios.get('https://gameof-thrones-json.vercel.app/characters/' + id)
       .then(data => setCharacter(data.data))
 
   }

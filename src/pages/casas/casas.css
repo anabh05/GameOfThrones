@@ -1,3 +1,9 @@
+body {
+
+    overflow-x: hidden;
+        
+}
+
 .casas{
     background-color: black;
     /* height: 100vh; */

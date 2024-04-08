@@ -19,7 +19,7 @@ export default function Personajes({ t }) {
   }, []);
 
   const getCharacters = () => {
-    axios.get('http://localhost:3000/characters/')
+    axios.get('https://gameof-thrones-json.vercel.app/characters/')
       .then(data => setCharacters(data.data));
   }
 
@@ -61,7 +61,7 @@ export default function Personajes({ t }) {
     <>
       <Languages></Languages>
       <div className='filtro'>
-      <img className='search' src= "public\search_FILL0_wght400_GRAD0_opsz24.svg"></img>
+      <img className='search' src= "search_FILL0_wght400_GRAD0_opsz24.svg"></img>
       <input type='text' onChange={(e) => filtrado(e)} className='form-data' /></div>
       <div className='characters'>
         {newCharacters.length === 0 ?

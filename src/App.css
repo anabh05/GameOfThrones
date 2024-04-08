@@ -65,6 +65,7 @@
   padding: 10px 0;
   text-align: center;
   justify-content: space-around;
+  z-index: 1000;
 
   
 }

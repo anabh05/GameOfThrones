@@ -3,13 +3,14 @@ import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 export const housesGlobal = React.createContext()
 import './casas.css'
+import Languages from "../../components/Languages"
 
 
 export default function Casas() {
   const [houses, setHouses] = useState()
   const [newHouses, setNewHouses] = useState([]);
   const getHouses = () => {
-    axios.get('http://localhost:3000/houses')
+    axios.get('https://gameof-thrones-json.vercel.app/houses')
       .then(data => setHouses(data.data))
   }
 
@@ -38,6 +39,7 @@ export default function Casas() {
   return (
 
     <>
+      <Languages></Languages>
       <div className="filtro">
       <input type='text' onChange={(e) => filtrado(e)} /></div>
 
