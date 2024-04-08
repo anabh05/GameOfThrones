@@ -76,8 +76,10 @@ export default function Personaje({ t }) {
           </div>
         <div className="info-texto">
         <h3>{t('Alliances')}</h3>
-        <nav>
-          <li>{character.alliances}</li>
+            <nav>
+           {character.alliances.map((alliance, episodeAlliance) => (
+             <li key={episodeAlliance}>{alliance}</li>
+              ))}
             </nav>
           </div>
         <div className="info-texto">
