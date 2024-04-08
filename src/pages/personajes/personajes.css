@@ -50,6 +50,8 @@ a {
 .filtro {
     width: 100%;
     margin-bottom: 20px;
+    display: flex;
+    align-items: flex-end;
 }
 
 .filtro input[type="text"] {
@@ -61,14 +63,16 @@ a {
     box-sizing: border-box;
     background-color: black;
     width: 250px;
-    right: 50px;
-    margin-left: 50px;
+    /* right: 50px; */
+    margin-left: 0px;
     margin-top: 30px;
     color: white;
 }
 
 .search{
    fill:white;
+   width: 25px;
+    margin-left: 50px;
         }
     
 

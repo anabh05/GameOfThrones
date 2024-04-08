@@ -42,9 +42,6 @@ export default function Personajes({ t }) {
 
   //   setNewCharacters(data)
 
-
-
-
   // }
   // if (valor === undefined) {
   // // console.log(valor)
@@ -62,7 +59,7 @@ export default function Personajes({ t }) {
       <Languages></Languages>
       <div className='filtro'>
       <img className='search' src= "search_FILL0_wght400_GRAD0_opsz24.svg"></img>
-      <input type='text' onChange={(e) => filtrado(e)} className='form-data' /></div>
+      <input type='text' onChange={(e) => filtrado(e)} className='form-data' placeholder={t('Search Character')} /></div>
       <div className='characters'>
         {newCharacters.length === 0 ?
           characters.map((character, index) => (

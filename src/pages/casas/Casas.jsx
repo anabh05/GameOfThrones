@@ -6,7 +6,7 @@ import './casas.css'
 import Languages from "../../components/Languages"
 
 
-export default function Casas() {
+export default function Casas({ t }) {
   const [houses, setHouses] = useState()
   const [newHouses, setNewHouses] = useState([]);
   const getHouses = () => {
@@ -40,8 +40,9 @@ export default function Casas() {
 
     <>
       <Languages></Languages>
-      <div className="filtro">
-      <input type='text' onChange={(e) => filtrado(e)} /></div>
+      <div className='filtro'>
+      <img className='search' src= "search_FILL0_wght400_GRAD0_opsz24.svg"></img>
+      <input type='text' onChange={(e) => filtrado(e)} className='form-data' placeholder={t('Search House')} /></div>
 
       <div>{houses &&
         <div className="casas">
@@ -57,12 +58,12 @@ export default function Casas() {
               </div></Link>
             ) :
             newHouses.map((house, index) => <Link to={"/casas/" + house.id } key={index}>
-              <div>
-                <div>
+              <div className="search-casa">
+                <div className="search-casa_img">
                   <img src={house.image} alt={house.name} />
                 </div>
                 <h2>{house.name}</h2>
-                <p></p>
+                
 
               </div></Link>
             )}
