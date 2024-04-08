@@ -66,7 +66,7 @@ export default function Personajes({ t }) {
       <div className='characters'>
         {newCharacters.length === 0 ?
           characters.map((character, index) => (
-            <Link to={character.id} key={index}>
+           <Link to={"/personajes/" + character.id } key={index}>
               <div className='character'>
                 <div className='character-img'>
                   <img src={character.image} alt={character.name} />
@@ -79,7 +79,7 @@ export default function Personajes({ t }) {
             </Link>
           )) :
           newCharacters.map((character, index) => (
-            <Link to={character.id} key={index}>
+           <Link to={"/personajes/" + character.id } key={index}>
               <div className='character'>
                 <div className='character-img'>
                   <img src={character.image} alt={character.name} />
